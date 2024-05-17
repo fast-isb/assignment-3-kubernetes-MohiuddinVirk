@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment
+  name: frontend
   namespace: namespace
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: your-app
+      app: frontend
   template:
     metadata:
       labels:
-        app: your-app
+        app: frontend
     spec:
       containers:
-      - name: your-app
-        image: frontend
+      - name: frontend
+        image: frontend:latest
         ports:
         - containerPort: 3001
